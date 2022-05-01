@@ -1,0 +1,56 @@
+[
+    {
+        "_id": 1,
+        "name": "Yamaha fz",
+        "description":"Best in the town",
+        "price": "300",
+        "quantity": "15",
+        "supplier": "Yamaha",
+        "img": "https://i.ibb.co/Q9QWcdz/bike1.jpg"
+    },
+    {
+        "_id": 2,
+        "name": "Yamaha fz",
+        "description":"Best in the town",
+        "price": "300",
+        "quantity": "15",
+        "supplier": "Yamaha",
+        "img": "https://i.ibb.co/Q9QWcdz/bike1.jpg"
+    },
+    {
+        "_id": 3,
+        "name": "Yamaha fz",
+        "description":"Best in the town",
+        "price": "300",
+        "quantity": "15",
+        "supplier": "Yamaha",
+        "img": "https://i.ibb.co/Q9QWcdz/bike1.jpg"
+    },
+    {
+        "_id": 4,
+        "name": "Yamaha fz",
+        "description":"Best in the town",
+        "price": "300",
+        "quantity": "15",
+        "supplier": "Yamaha",
+        "img": "https://i.ibb.co/Q9QWcdz/bike1.jpg"
+    },
+    {
+        "_id": 5,
+        "name": "Yamaha fz",
+        "description":"Best in the town",
+        "price": "300",
+        "quantity": "15",
+        "supplier": "Yamaha",
+        "img": "https://i.ibb.co/Q9QWcdz/bike1.jpg"
+    },
+    {
+        "_id": 6,
+        "name": "Yamaha fz",
+        "description":"Best in the town",
+        "price": "300",
+        "quantity": "15",
+        "supplier": "Yamaha",
+        "img": "https://i.ibb.co/Q9QWcdz/bike1.jpg"
+    }
+]

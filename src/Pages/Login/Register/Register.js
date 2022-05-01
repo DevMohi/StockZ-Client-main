@@ -119,7 +119,7 @@ const Register = () => {
                             onChange={handleConfirmPass}
                         />
                     </Form.Group>
-                    <button className='btn btn-dark mx-auto w-50 d-block'>Register</button> <br />
+                    <button className='btn btn-dark mx-auto d-block'>Register</button> <br />
                     <div className='text-center mb-1'>
                         <span >Already have an account? <Link to='/login'>Login</Link></span> <br />
                     </div>

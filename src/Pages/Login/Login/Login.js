@@ -107,7 +107,7 @@ const Login = () => {
                             </p>
                         }
                     </Form.Group>
-                    <button className='btn btn-dark mx-auto w-50 d-block'>Login</button> <br />
+                    <button className='btn btn-dark mx-auto  d-block'>Login</button> <br />
                     <div className='text-center mb-1'>
                         <span >New to Stonks? <Link to='/register'>Register</Link></span> <br />
                         <p>Forgot Password?<span className='text-success' style={{ textDecoration: 'underline', cursor: 'pointer' }} onClick={resetPassword}>Reset</span></p>
