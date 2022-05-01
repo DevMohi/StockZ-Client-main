@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import toast, { Toaster } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../Firebase/Firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -69,6 +70,21 @@ const Login = () => {
     if (user) {
         navigate('/')
     }
+    const [sendPasswordResetEmail, sending,] = useSendPasswordResetEmail(
+        auth
+    );
+    const resetPassword = async () => {
+        const email = userInfo.email;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast("Email Sent")
+        }
+        else {
+            toast('Please enter valid email address')
+        }
+
+    }
+
     return (
         <div className='container mt-5'>
             <div className='w-50 mx-auto'>
@@ -94,7 +110,7 @@ const Login = () => {
                     <button className='btn btn-dark mx-auto w-50 d-block'>Login</button> <br />
                     <div className='text-center mb-1'>
                         <span >New to Stonks? <Link to='/register'>Register</Link></span> <br />
-                        <span>Forgot Password? <a >Reset</a></span>
+                        <p>Forgot Password?<span className='text-success' style={{ textDecoration: 'underline', cursor: 'pointer' }} onClick={resetPassword}>Reset</span></p>
                     </div>
                 </Form>
                 {
@@ -102,6 +118,7 @@ const Login = () => {
                 }
 
                 <SocialLogin></SocialLogin>
+                <Toaster></Toaster>
             </div>
         </div>
     );
