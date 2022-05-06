@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import toast, { Toaster } from 'react-hot-toast';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import auth from '../../../Firebase/Firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const navigate = useNavigate()
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
     const [
         signInWithEmailAndPassword,
         user,
@@ -67,8 +69,9 @@ const Login = () => {
         signInWithEmailAndPassword(userInfo.email, userInfo.password)
     }
 
+
     if (user) {
-        navigate('/')
+        navigate(from, { replace: true });
     }
     const [sendPasswordResetEmail, sending,] = useSendPasswordResetEmail(
         auth
