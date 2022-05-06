@@ -21,7 +21,7 @@ const SocialLogin = () => {
 
     return (
         <div>
-            <div className='social-button-container'>
+            <div>
                 <div className='d-flex align-items-center justify-content-center'>
                     <div style={{ height: "1px" }} className='bg-dark w-25'></div>
                     <div className='px-1 pb-1'>or</div>
