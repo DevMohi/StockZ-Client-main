@@ -8,7 +8,7 @@ import logo4 from '../../../images/Sponsors/logo4.PNG'
 const Sponsors = () => {
     return (
         <div className='container '>
-            <h1 className='text-center display-5'>Our Sponsors</h1>
+            <h1 className='text-center display-5 title pb-2'>Our Sponsors</h1>
             <div className="container mt-5 ">
                 <div className="row">
                     <div className="col-sm">

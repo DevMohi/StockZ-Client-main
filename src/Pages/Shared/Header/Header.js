@@ -12,9 +12,9 @@ const Header = () => {
     }
     return (
 
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="dark" expand="lg">
             <Container>
-                <Navbar.Brand as={Link} to='/' href="#">Stonks</Navbar.Brand>
+                <Navbar.Brand as={Link} to='/' href="#" className='text-white'>Stonks</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -22,22 +22,22 @@ const Header = () => {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Nav.Link as={Link} to='/home'>Home</Nav.Link>
-                        <Nav.Link as={Link} to='/blogs' >
+                        <Nav.Link as={Link} to='/home' className='text-white'>Home</Nav.Link>
+                        <Nav.Link as={Link} to='/blogs' className='text-white'>
                             Blogs
                         </Nav.Link>
                         {user && <>
-                            <Nav.Link as={Link} to='/add' >
+                            <Nav.Link as={Link} to='/add' className='text-white'>
                                 Add Items
                             </Nav.Link>
-                            <Nav.Link as={Link} to='/manage' >
+                            <Nav.Link as={Link} to='/manage' className='text-white'>
                                 Manage Items
                             </Nav.Link>
                         </>}
                     </Nav>
                     <Form className="d-flex">
                         {
-                            user ? <Button onClick={handleLogout}>Logout</Button> : <Button as={Link} to='/login' variant="outline-success">Login</Button>
+                            user ? <Button onClick={handleLogout} className='text-white'>Logout</Button> : <Button as={Link} to='/login' variant="outline-success" className='text-white'>Login</Button>
                         }
                     </Form>
                 </Navbar.Collapse>
