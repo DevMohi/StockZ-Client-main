@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
+import './UpdateDetails.css'
 
 const UpdateDetails = () => {
     const [show, setShow] = useState(false);
@@ -73,23 +74,28 @@ const UpdateDetails = () => {
 
     return (
         <div className="container mt-5">
-            <div className='shadow-sm p-2 mb-5 bg-bodyrounded d-flex justify-content-center '>
-                <div style={{ width: '50%' }} className='py-3 px-5'>
-                    <img src=
+            <h6 className='text-center display-6 '>Update and Manage Stocks</h6>
+            <div className='shadow-sm p-2 mb-5   
+            w-75 mx-auto
+            bg-bodyrounded d-flex justify-content-center inventory-container'>
+                <div className='py-4 px-5 '>
+                    <img className='inventory-images' src=
                         {inventory.img} alt=""
                         style={{ width: '100%' }} />
                 </div>
-                <div className='d-flex mt-2 align-items-center '>
-                    <div>
-                        <h3 className=''>{inventory.name}</h3>
-                        <small>{inventory._id}</small>
+                <div className='d-flex align-items-center  inventory-info-container'>
+                    <div className='inventory-info'>
+                        <h5 className=''>{inventory.name}</h5>
+                        <small className='id-title '>{inventory._id}</small>
                         <h5 className='pb-2 pt-2'>Quantity:{parseInt(inventory.quantity) === 0 ? sold : inventory.quantity}</h5>
                         <h5 className='pb-2'>Supplier: {inventory.supplier}</h5>
                         <h5 className='pb-2'>Price: {inventory.price}</h5>
-                        <button className='btn btn-success me-2' onClick={updateBtn}>Delivered</button>
-                        <Button variant="danger" onClick={handleShow}>
-                            Restock
-                        </Button>
+                        <div className='inventory-btn'>
+                            <button className='btn btn-success me-2' onClick={updateBtn}>Delivered</button>
+                            <button className='btn btn-danger' onClick={handleShow}>
+                                Restock
+                            </button>
+                        </div>
 
 
                         <Modal show={show} onHide={handleClose}>
@@ -123,7 +129,7 @@ const UpdateDetails = () => {
 
             <div className='d-flex justify-content-center'>
                 <Link to='/manage'>
-                    <button className='btn btn-dark'>Manage Inventories</button>
+                    <button className='btn btn-dark '>Manage Inventories</button>
                 </Link>
             </div>
         </div>

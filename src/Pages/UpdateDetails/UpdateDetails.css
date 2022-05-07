@@ -1,0 +1,69 @@
+
+
+@media only screen and (max-width: 678px) {
+    .inventory-info{
+        margin-top: -40px;
+        margin-bottom: 20px;
+    }
+    .inventory-info h5, .id-title{
+        font-size: 12px; 
+        text-align: center;
+        
+    }
+    .inventory-info-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .inventory-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .inventory-btn button{
+        font-size: 8px;
+    }
+    .inventory-container{
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+}
+
+@media only screen and (max-width:992px)  and (min-width: 679px){
+    .inventory-info {
+        margin-top: -10px;
+        margin-bottom: 20px;
+    }
+
+    .inventory-info h5,
+    .id-title {
+        font-size: 15px;
+        text-align: center;
+
+    }
+
+    .inventory-info-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .inventory-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .inventory-btn button {
+        font-size: 10px;
+    }
+
+    .inventory-container {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+}

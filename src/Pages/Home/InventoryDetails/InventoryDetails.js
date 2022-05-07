@@ -12,7 +12,7 @@ const InventoryDetails = ({ details }) => {
             <div className='shadow-sm p-2 mb-5 bg-bodyrounded'>
                 <div>
                     <div className='d-flex justify-content-center'>
-                        <img className='rounded' src={img} alt="" style={{ width: '50%' }} />
+                        <img className='rounded' src={img} alt="" />
 
                     </div>
                     <div className='text-center mt-3 mb-2'>
