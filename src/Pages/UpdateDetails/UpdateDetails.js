@@ -4,13 +4,37 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 const UpdateDetails = () => {
     const { inventoryId } = useParams()
     const [inventory, setInventory] = useState({})
+    const [sold, setSold] = useState("")
 
     useEffect(() => {
         const url = `http://localhost:5000/inventory/${inventoryId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setInventory(data))
-    }, [])
+    }, [inventory])
+
+    const updateBtn = () => {
+        const decreaseQuantity = parseInt(inventory.quantity) - 1;
+        const updateQuantity = { quantity: decreaseQuantity.toString() }
+        console.log(updateQuantity)
+
+        if (updateQuantity.quantity >= 0) {
+            const url = `http://localhost:5000/inventory/${inventoryId}`;
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(updateQuantity)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                })
+        }
+
+    }
+
 
 
 
@@ -28,8 +52,11 @@ const UpdateDetails = () => {
                         <h5 className='pb-2'>Quantity:{inventory.quantity}</h5>
                         <h5 className='pb-2'>Supplier: {inventory.supplier}</h5>
                         <h5 className='pb-2'>Price: {inventory.price}</h5>
-                        <button className='btn btn-success me-2'>Update</button>
+                        <button className='btn btn-success me-2' onClick={updateBtn}>Delivered</button>
                         <button className='btn btn-danger'>Restock</button>
+                        {sold && <p className='text-danger'>{sold}</p>}
+
+
                     </div>
 
                 </div>

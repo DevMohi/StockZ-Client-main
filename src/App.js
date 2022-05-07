@@ -22,7 +22,7 @@ function App() {
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/add' element={<AddItems></AddItems>}></Route>
         <Route path='/manage' element={<ManageInventory></ManageInventory>}></Route>
-        <Route path='/inventoryDetails/:inventoryId' element={<PrivateRoute><UpdateDetails></UpdateDetails></PrivateRoute>} ></Route>
+        <Route path='/inventoryDetails/:inventoryId' element={<UpdateDetails></UpdateDetails>} ></Route>
 
       </Routes>
     </div>
