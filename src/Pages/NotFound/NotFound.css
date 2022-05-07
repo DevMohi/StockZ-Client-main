@@ -1,0 +1,15 @@
+.notfound-image {
+    height: 400px;
+}
+
+.notfound-button button {
+    background-color: #72adf1;
+    border: none;
+    
+}
+
+@media only screen and (max-width: 678px) {
+    .notfound-image img {
+        width: 100%;
+    }
+}

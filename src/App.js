@@ -4,9 +4,9 @@ import AddItems from './Pages/AddItems/AddItems';
 import Blogs from './Pages/Blogs/Blogs';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
-import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Register from './Pages/Login/Register/Register';
 import ManageInventory from './Pages/ManageInventory/ManageInventory';
+import NotFound from './Pages/NotFound/NotFound';
 import Header from './Pages/Shared/Header/Header';
 import UpdateDetails from './Pages/UpdateDetails/UpdateDetails';
 
@@ -23,7 +23,7 @@ function App() {
         <Route path='/add' element={<AddItems></AddItems>}></Route>
         <Route path='/manage' element={<ManageInventory></ManageInventory>}></Route>
         <Route path='/inventoryDetails/:inventoryId' element={<UpdateDetails></UpdateDetails>} ></Route>
-
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
     </div>
   );

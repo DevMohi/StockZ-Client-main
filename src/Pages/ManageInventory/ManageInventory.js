@@ -35,7 +35,7 @@ const ManageInventory = () => {
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Desc</th>
+                        
                                 <th scope="col">Supplier</th>
                                 <th scope="col">Quantity</th>
                                 <th scope="col">Price</th>
@@ -48,7 +48,6 @@ const ManageInventory = () => {
                                 <th scope="row"></th>
                                 <td><img style={{ width: '30px' }} src={details.img} alt="" /></td>
                                 <td>{details.name}</td>
-                                <td>{details.description}</td>
                                 <td>{details.supplier}</td>
                                 <td>{details.quantity}</td>
                                 <td>{details.price}</td>

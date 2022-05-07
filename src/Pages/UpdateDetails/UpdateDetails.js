@@ -9,7 +9,7 @@ const UpdateDetails = () => {
 
     const { inventoryId } = useParams()
     const [inventory, setInventory] = useState({})
-    const [sold, setSold] = useState("")
+
 
     useEffect(() => {
         const url = `http://localhost:5000/inventory/${inventoryId}`
@@ -17,6 +17,11 @@ const UpdateDetails = () => {
             .then(res => res.json())
             .then(data => setInventory(data))
     }, [inventory])
+
+    let sold;
+    if (parseInt(inventory.quantity) === 0) {
+        sold = <p>Sold Out</p>
+    }
 
     const updateBtn = () => {
         const decreaseQuantity = parseInt(inventory.quantity) - 1;
@@ -41,23 +46,29 @@ const UpdateDetails = () => {
     }
 
     const handleStock = e => {
+
         e.preventDefault()
         const stock = parseInt(e.target.stock.value)
-        console.log(stock)
-        const increaseQuantity = parseInt(inventory.quantity) + stock;
-        const updateQuantity = { quantity: increaseQuantity.toString() }
-        const url = `http://localhost:5000/inventory/${inventoryId}`;
-        fetch(url, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(updateQuantity)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
+        // console.log(stock) 
+        if (stock > 0) {
+            const increaseQuantity = parseInt(inventory.quantity) + stock;
+            const updateQuantity = { quantity: increaseQuantity.toString() }
+            const url = `http://localhost:5000/inventory/${inventoryId}`;
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(updateQuantity)
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                })
+        }
+
+
+        setShow(false)
     }
 
     return (
@@ -68,17 +79,17 @@ const UpdateDetails = () => {
                         {inventory.img} alt=""
                         style={{ width: '100%' }} />
                 </div>
-                <div className='d-flex mt-2 '>
+                <div className='d-flex mt-2 align-items-center '>
                     <div>
-                        <h3 className='pb-2'>{inventory.name}</h3>
-                        <h5 className='pb-2'>Quantity:{inventory.quantity}</h5>
+                        <h3 className=''>{inventory.name}</h3>
+                        <small>{inventory._id}</small>
+                        <h5 className='pb-2 pt-2'>Quantity:{parseInt(inventory.quantity) === 0 ? sold : inventory.quantity}</h5>
                         <h5 className='pb-2'>Supplier: {inventory.supplier}</h5>
                         <h5 className='pb-2'>Price: {inventory.price}</h5>
                         <button className='btn btn-success me-2' onClick={updateBtn}>Delivered</button>
                         <Button variant="danger" onClick={handleShow}>
                             Restock
                         </Button>
-                        {sold && <p className='text-danger'>{sold}</p>}
 
 
                         <Modal show={show} onHide={handleClose}>
@@ -102,11 +113,6 @@ const UpdateDetails = () => {
                                     </Form>
                                 </div>
                             </Modal.Body>
-                            <Modal.Footer>
-                                <Button variant="secondary" onClick={handleClose}>
-                                    Close
-                                </Button>
-                            </Modal.Footer>
                         </Modal>
 
                     </div>
