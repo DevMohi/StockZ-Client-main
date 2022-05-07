@@ -1,0 +1,7 @@
+.sponsor-container {
+    transition: transform 0.5s;
+}
+
+.sponsor-container:hover {
+    transform: translateY(-10px);
+}

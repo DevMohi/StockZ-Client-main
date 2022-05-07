@@ -29,18 +29,19 @@ const ManageInventory = () => {
                 inventory.map(details => <div
                     key={details._id}
                     className='w-75 mx-auto'>
-                    <table class="table">
-                        <thead>
+                    <table className="table table-light">
+                    
                             <tr>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                                 <th scope="col">Name</th>
-                        
+
                                 <th scope="col">Supplier</th>
                                 <th scope="col">Quantity</th>
                                 <th scope="col">Price</th>
+                                <th scope="col"></th>
                             </tr>
-                        </thead>
+                     
 
 
                         <tbody>
