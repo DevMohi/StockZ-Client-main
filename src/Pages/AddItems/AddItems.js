@@ -1,8 +1,11 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { ToastIcon } from 'react-hot-toast';
 import auth from '../../Firebase/Firebase.init';
 import './AddItems.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddItems = () => {
     const [user] = useAuthState(auth);
@@ -22,7 +25,7 @@ const AddItems = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result)
-
+                toast("Item Added")
             })
 
     };
@@ -38,7 +41,9 @@ const AddItems = () => {
                 <input className='mb-2' placeholder='Photo Url' type="text" {...register("img")} />
                 <input type="submit" value='Add Service' className='custom-btn' />
             </form>
+            <ToastContainer></ToastContainer>
         </div>
+
     );
 };
 

@@ -11,7 +11,6 @@ const MyItems = () => {
         fetch(url, {
             headers: {
                 'authorization': `${user?.email} ${localStorage.getItem("accessToken")}`,
-                'content-type': 'application/json'
             },
         })
             .then(res => res.json())
@@ -21,9 +20,11 @@ const MyItems = () => {
     return (
         <div>
             <h1>Hello</h1>
-            <ul>
-                {orderList.map(order => <li>{order.name}</li>)}
-            </ul>
+            <div>
+                {
+                    orderList.map(order => <h1 key={order._id}>{order.name}</h1>)
+                }
+            </div>
         </div>
     );
 };
