@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import AboutPage from './Pages/AboutPage/AboutPage';
 import AddItems from './Pages/AddItems/AddItems';
+import AddReview from './Pages/AddReview/AddReview';
 import Blogs from './Pages/Blogs/Blogs';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
@@ -28,6 +29,7 @@ function App() {
         <Route path='/add' element={<PrivateRoute><AddItems></AddItems></PrivateRoute>}></Route>
         <Route path='/manage' element={<PrivateRoute><ManageInventory></ManageInventory></PrivateRoute>}></Route>
         <Route path='/myitems' element={<PrivateRoute><MyItems></MyItems></PrivateRoute>}></Route>
+        <Route path='/addreview' element={<PrivateRoute><AddReview></AddReview></PrivateRoute>}></Route>
         <Route path='/inventoryDetails/:inventoryId' element={<PrivateRoute><UpdateDetails></UpdateDetails></PrivateRoute>} ></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
