@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Loading from '../../Loading/Loading';
 import Review from '../Review/Review';
 
 import './Reviews.css'
 
+
 const Reviews = () => {
+    let loadingElement = <Loading></Loading>
     const [reviews, setReviews] = useState([])
     useEffect(() => {
         fetch('https://infinite-journey-06820.herokuapp.com/review')
@@ -19,7 +22,7 @@ const Reviews = () => {
             <h1 className='custom-clr display-5 text-center title'>Customer Says!</h1>
             <div className="row">
                 {
-                    reviews.map(review => <Review
+                    reviews.length === 0 ? loadingElement : reviews.map(review => <Review
                         key={review._id} review={review}
                     ></Review>)
                 }

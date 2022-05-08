@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import auth from '../../Firebase/Firebase.init';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './AddReview.css'
 
 const AddReview = () => {
     const [user] = useAuthState(auth);
@@ -28,7 +29,7 @@ const AddReview = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result)
-                toast("Item Added")
+                toast("Reviews Added")
             })
 
 
@@ -50,6 +51,7 @@ const AddReview = () => {
                 <input className='mb-2' placeholder='Rating in Stars' type="text" {...register("rating")} />
                 <input className='mb-2' placeholder='Description' type='textarea' style={{ paddingBottom: '20px' }} {...register("desc")} />
                 <input type="submit" value='Add Review' className='custom-btn' />
+
             </form>
             <ToastContainer></ToastContainer>
         </div>

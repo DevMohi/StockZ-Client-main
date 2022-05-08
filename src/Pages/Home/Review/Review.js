@@ -1,5 +1,7 @@
 import React from 'react';
+
 import './Review.css'
+
 
 const Review = ({ review }) => {
     const { img, name, rating, desc } = review;

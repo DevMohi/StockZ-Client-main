@@ -28,6 +28,7 @@ const ManageInventory = () => {
                 })
         }
     }
+    let sold;
 
     return (
         <div className='container table-container'>
