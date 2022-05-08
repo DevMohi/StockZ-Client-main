@@ -14,7 +14,7 @@ const AddItems = () => {
     const onSubmit = data => {
         console.log(data)
         // to send to database 
-        const url = `http://localhost:5000/inventory`
+        const url = `https://infinite-journey-06820.herokuapp.com/inventory`
         const item = {
             name: data.name,
             description: data.description,
@@ -40,7 +40,7 @@ const AddItems = () => {
 
 
 
-        // axios.post(`http://localhost:5000/additems`, item)
+        // axios.post(`https://infinite-journey-06820.herokuapp.com/additems`, item)
         //     .then(res => {
         //         const { data } = res;
         //         if (data.insertedId) {

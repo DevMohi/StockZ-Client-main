@@ -13,7 +13,7 @@ const UpdateDetails = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5000/inventory/${inventoryId}`
+        const url = `https://infinite-journey-06820.herokuapp.com/inventory/${inventoryId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setInventory(data))
@@ -30,7 +30,7 @@ const UpdateDetails = () => {
         console.log(updateQuantity)
 
         if (updateQuantity.quantity >= 0) {
-            const url = `http://localhost:5000/inventory/${inventoryId}`;
+            const url = `https://infinite-journey-06820.herokuapp.com/inventory/${inventoryId}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -54,7 +54,7 @@ const UpdateDetails = () => {
         if (stock > 0) {
             const increaseQuantity = parseInt(inventory.quantity) + stock;
             const updateQuantity = { quantity: increaseQuantity.toString() }
-            const url = `http://localhost:5000/inventory/${inventoryId}`;
+            const url = `https://infinite-journey-06820.herokuapp.com/inventory/${inventoryId}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {

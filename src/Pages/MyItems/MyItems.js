@@ -8,7 +8,7 @@ const MyItems = () => {
     const [user] = useAuthState(auth);
     const [itemList, setItemList] = useState([])
     useEffect(() => {
-        const url = `http://localhost:5000/itemList`
+        const url = `https://infinite-journey-06820.herokuapp.com/itemList`
         fetch(url, {
             headers: {
                 'authorization': `${user?.email} ${localStorage.getItem("accessToken")}`,
@@ -22,7 +22,7 @@ const MyItems = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm("Are you sure");
         if (proceed) {
-            const url = `http://localhost:5000/itemList/${id}`
+            const url = `https://infinite-journey-06820.herokuapp.com/itemList/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

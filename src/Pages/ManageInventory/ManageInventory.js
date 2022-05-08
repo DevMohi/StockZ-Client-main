@@ -16,7 +16,7 @@ const ManageInventory = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm("Are you sure");
         if (proceed) {
-            const url = `http://localhost:5000/inventory/${id}`
+            const url = `https://infinite-journey-06820.herokuapp.com/inventory/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
@@ -34,10 +34,10 @@ const ManageInventory = () => {
             <h3 className='text-center mt-3 pb-2'>Manage Your Services</h3>
             <table className='w-100'>
                 <tr>
-                    <th scope="col" className='me-2 w-25 border border-danger text-center'>Image</th>
-                    <th scope="col " className='me-2 w-25 border border-danger text-center'>Name</th>
-                    <th scope="col " className='me-2 w-25 border border-danger text-center'>Quantity</th>
-                    <th scope="col" className='me-2 w-25 border border-danger text-center'>Price</th>
+                    <th scope="col" className='me-2 w-25 border border-dark text-center'>Image</th>
+                    <th scope="col " className='me-2 w-25 border border-dark text-center'>Name</th>
+                    <th scope="col " className='me-2 w-25 border border-dark text-center'>Quantity</th>
+                    <th scope="col" className='me-2 w-25 border border-dark text-center'>Price</th>
 
                 </tr>
             </table>

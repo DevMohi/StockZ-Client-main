@@ -19,7 +19,7 @@ const SocialLogin = () => {
         signInWithGoogle()
     }
     if (user) {
-        const url = `http://localhost:5000/login`
+        const url = `https://infinite-journey-06820.herokuapp.com/login`
         fetch(url, {
             method: 'POST',
             body: JSON.stringify({
@@ -35,7 +35,7 @@ const SocialLogin = () => {
                 navigate(from, { replace: true });
             });
     }
-    
+
     if (loading) {
         return <Loading></Loading>
     }
