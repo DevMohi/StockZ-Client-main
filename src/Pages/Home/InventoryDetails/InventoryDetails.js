@@ -27,7 +27,7 @@ const InventoryDetails = ({ details }) => {
                         <h6>Supplier:{supplier}</h6>
                         <p>Price:${price}</p>
 
-                        <button className='btn btn-dark' onClick={() => navigateToUpdateDetails(_id)}>Update</button>
+                        <button className='btn' style={{ backgroundColor: '#72adf1', borderRadius: '10px', border: 'none', color: 'white' }} onClick={() => navigateToUpdateDetails(_id)}>Update</button>
                     </div>
                 </div>
             </div>

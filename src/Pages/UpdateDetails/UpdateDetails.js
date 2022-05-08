@@ -91,8 +91,8 @@ const UpdateDetails = () => {
                         <h5 className='pb-2'>Supplier: {inventory.supplier}</h5>
                         <h5 className='pb-2'>Price: {inventory.price}</h5>
                         <div className='inventory-btn'>
-                            <button className='btn btn-success me-2' onClick={updateBtn}>Delivered</button>
-                            <button className='btn btn-danger' onClick={handleShow}>
+                            <button className='btn btn-dark me-2' onClick={updateBtn}>Delivered</button>
+                            <button className='btn ' style={{ backgroundColor: '#8934eb', color: '#FFF' }} onClick={handleShow}>
                                 Restock
                             </button>
                         </div>
@@ -110,9 +110,9 @@ const UpdateDetails = () => {
                                                 name='stock'
                                             />
                                             <div className='mt-2'>
-                                                <Button className='mx-auto d-block btn btn-danger' variant="primary" type="submit">
+                                                <button className='mx-auto d-block btn' type="submit" style={{ backgroundColor: '#8934eb', color: '#FFF' }}>
                                                     Restock
-                                                </Button>
+                                                </button>
                                             </div>
 
                                         </Form.Group>
@@ -129,7 +129,7 @@ const UpdateDetails = () => {
 
             <div className='d-flex justify-content-center'>
                 <Link to='/manage'>
-                    <button className='btn btn-dark '>Manage Inventories</button>
+                    <button className='btn' style={{ backgroundColor: '#72adf1', borderRadius: '10px', border: 'none', color: 'white' }}>Manage Inventories</button>
                 </Link>
             </div>
         </div>

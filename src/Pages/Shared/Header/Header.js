@@ -14,7 +14,7 @@ const Header = () => {
 
         <Navbar bg="dark" expand="lg">
             <Container>
-                <Navbar.Brand as={Link} to='/' href="#" className='text-white'>StockZ</Navbar.Brand>
+                <Navbar.Brand as={Link} to='/' href="#" className='text-white'>Stock<span style={{ color: '#72adf1' }}>Z</span></Navbar.Brand>
                 <Navbar.Toggle className='bg-white' aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -43,7 +43,7 @@ const Header = () => {
                     </Nav>
                     <Form className="d-flex">
                         {
-                            user ? <Button onClick={handleLogout} className='text-white'>Logout</Button> : <Button as={Link} to='/login' variant="outline-success" className='text-white'>Login</Button>
+                            user ? <Button onClick={handleLogout} className='text-white' style={{ backgroundColor: '#72adf1', borderRadius: '10px', border: 'none', color: 'white' }}>Logout</Button> : <Button as={Link} to='/login' variant="outline-success" className='text-white'>Login</Button>
                         }
                     </Form>
                 </Navbar.Collapse>

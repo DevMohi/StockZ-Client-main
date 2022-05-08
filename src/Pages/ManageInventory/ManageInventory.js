@@ -64,8 +64,8 @@ const ManageInventory = () => {
                 </div>)
             }
 
-            <div className='d-flex justify-content-center'>
-                <Link to='/add'><button className='btn btn-success'>Add Items</button></Link>
+            <div className='d-flex justify-content-end'>
+                <Link to='/add'><button className='btn btn-success' style={{ backgroundColor: '#72adf1', borderRadius: '10px', border: 'none', color: 'white' }}>Add Items</button></Link>
             </div>
             <ToastContainer></ToastContainer>
         </div >

@@ -14,7 +14,7 @@ const Footer = () => {
                 <div class="row">
                     <div class="col text-white g-3">
                         <div className='d-flex justify-content-center'>
-                            <h5>StockZ</h5>
+                            <h5>Stock<span style={{ color: '#72adf1' }}>Z</span></h5>
                         </div>
                     </div>
                     <div class="col-5 text-white g-3 icons">
@@ -26,7 +26,7 @@ const Footer = () => {
                     </div>
                     <div class="col text-white g-3 copyright-container">
                         <div className='d-flex justify-content-center'>
-                            <small className='text-white pb-1'> &#169;{year} Stocks, All rights reserved</small>
+                            <small className='text-white pb-1'> &#169;{year} StockZ, All rights reserved</small>
                         </div>
                     </div>
                 </div>
