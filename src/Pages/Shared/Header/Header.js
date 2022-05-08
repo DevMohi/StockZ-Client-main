@@ -14,8 +14,8 @@ const Header = () => {
 
         <Navbar bg="dark" expand="lg">
             <Container>
-                <Navbar.Brand as={Link} to='/' href="#" className='text-white'>Stonks</Navbar.Brand>
-                <Navbar.Toggle aria-controls="navbarScroll" />
+                <Navbar.Brand as={Link} to='/' href="#" className='text-white'>StockZ</Navbar.Brand>
+                <Navbar.Toggle className='bg-white' aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
                         className="mx-auto my-2 my-lg-0"
@@ -31,7 +31,7 @@ const Header = () => {
                                 Add Items
                             </Nav.Link>
                             <Nav.Link as={Link} to='/manage' className='text-white'>
-                                Manage Items
+                                Manage Inventory
                             </Nav.Link>
                             <Nav.Link as={Link} to='/myitems' className='text-white'>
                                 My Items

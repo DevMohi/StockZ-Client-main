@@ -4,10 +4,11 @@ import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword 
 import toast, { Toaster } from 'react-hot-toast';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import auth from '../../../Firebase/Firebase.init';
+import Loading from '../../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
-    const [authUser] = useAuthState(auth);
+    const [authUser, authLoading] = useAuthState(auth);
     const navigate = useNavigate()
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
@@ -47,6 +48,7 @@ const Login = () => {
             setErrors({ ...errors, email: "Invalid email" })
         }
     }
+
 
     const handlePassword = (e) => {
         const passRegex = /.{8,}/;
@@ -103,6 +105,10 @@ const Login = () => {
             toast('Please enter valid email address')
         }
 
+    }
+
+    if (loading) {
+        return <Loading></Loading>
     }
 
     return (

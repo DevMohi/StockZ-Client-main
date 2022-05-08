@@ -1,0 +1,13 @@
+.footer-container {
+    background-color: rgba(21, 28, 34, 1);
+}
+
+.icons img {
+    height: 20px;
+}
+
+@media only screen and (max-width: 678px) {
+    .copyright-container small {
+        font-size: 8px;
+    }
+}

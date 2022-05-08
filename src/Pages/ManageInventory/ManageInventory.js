@@ -28,56 +28,34 @@ const ManageInventory = () => {
                 })
         }
     }
-    const handleOrder = (product) => {
-        const { name, price } = product
-        // console.log(product, user.email)
-        fetch('http://localhost:5000/addOrder', {
-            method: 'POST',
-            body: JSON.stringify({
-                name, price,
-                email: user?.email
-            }),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                toast(data.success)
-            });
-    }
+
     return (
-        <div className='w-50 mx-auto'>
-            <h3 className='text-center'>Manage Your Services</h3>
+        <div className='container table-container'>
+            <h3 className='text-center mt-3 pb-2'>Manage Your Services</h3>
+            <table className='w-100'>
+                <tr>
+                    <th scope="col" className='me-2 w-25 border border-danger text-center'>Image</th>
+                    <th scope="col " className='me-2 w-25 border border-danger text-center'>Name</th>
+                    <th scope="col " className='me-2 w-25 border border-danger text-center'>Quantity</th>
+                    <th scope="col" className='me-2 w-25 border border-danger text-center'>Price</th>
+
+                </tr>
+            </table>
             {
                 inventory.map(details => <div
                     key={details._id}
-                    className='table-container'>
+                    className=''>
                     <div>
                         <table className="table table-light">
-
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                                <th scope="col" className='me-2'>Name</th>
-                                <th scope="col" className='me-2'>Supplier</th>
-                                <th scope="col" className='me-2'>Quantity</th>
-                                <th scope="col" className='me-2'>Price</th>
-                                <th scope="col"></th>
-                            </tr>
-
                             <tbody>
                                 <tr>
-                                    <th scope="row"></th>
-                                    <td><img style={{ width: '50px' }} src={details.img} alt="" /></td>
-                                    <td>{details.name}</td>
-                                    <td>{details.supplier}</td>
-                                    <td>{details.quantity}</td>
-                                    <td>{details.price}</td>
-                                    <td>
-                                        <button className='btn btn-success me-2' onClick={() => handleOrder(details)}>Order</button>
-                                        <button className=' btn btn-dark delete-btn' onClick={() => handleDelete(details._id)}>Delete❌</button>
+                                    <td className='w-25 text-center'><img style={{ width: '50px' }} src={details.img} alt="" /></td>
+                                    <td className='w-25 text-center'>{details.name}</td>
+                                    <td className='w-25 text-center'>{details.quantity}</td>
+                                    <td className='w-25 text-center'>{details.price}
+                                        <button className=' btn btn-dark delete-btn ms-2' onClick={() => handleDelete(details._id)}>❌</button>
                                     </td>
+
                                 </tr>
 
                             </tbody>

@@ -9,6 +9,7 @@ import Register from './Pages/Login/Register/Register';
 import ManageInventory from './Pages/ManageInventory/ManageInventory';
 import MyItems from './Pages/MyItems/MyItems';
 import NotFound from './Pages/NotFound/NotFound';
+import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import UpdateDetails from './Pages/UpdateDetails/UpdateDetails';
 
@@ -28,6 +29,7 @@ function App() {
         <Route path='/inventoryDetails/:inventoryId' element={<PrivateRoute><UpdateDetails></UpdateDetails></PrivateRoute>} ></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

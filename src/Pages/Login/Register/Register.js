@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../Firebase/Firebase.init';
+import Loading from '../../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 
@@ -82,8 +83,13 @@ const Register = () => {
         createUserWithEmailAndPassword(userInfo.email, userInfo.password)
 
     }
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
     if (user) {
-        navigate('/')
+        navigate(from, { replace: true });
+    }
+    if (loading) {
+        return <Loading></Loading>
     }
 
     return (

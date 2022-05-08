@@ -6,6 +6,7 @@ import auth from '../../Firebase/Firebase.init';
 import './AddItems.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
 const AddItems = () => {
     const [user] = useAuthState(auth);
@@ -14,13 +15,22 @@ const AddItems = () => {
         console.log(data)
         // to send to database 
         const url = `http://localhost:5000/inventory`
+        const item = {
+            name: data.name,
+            description: data.description,
+            price: data.price,
+            quantity: data.quantity,
+            supplier: data.supplier,
+            img: data.img,
+            email: user.email,
+        }
         fetch(url, {
             method: 'POST',
             headers: {
                 'authorization': `${user.email} ${localStorage.getItem("accessToken")}`,
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(item)
         })
             .then(res => res.json())
             .then(result => {
@@ -28,6 +38,15 @@ const AddItems = () => {
                 toast("Item Added")
             })
 
+
+
+        // axios.post(`http://localhost:5000/additems`, item)
+        //     .then(res => {
+        //         const { data } = res;
+        //         if (data.insertedId) {
+        //             console.log("item added")
+        //         }
+        //     })
     };
     return (
         <div className='w-50 mx-auto add-container pt-5'>
