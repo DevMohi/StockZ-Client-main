@@ -1,0 +1,26 @@
+
+@media only screen and (max-width: 678px) {
+     .description h6{
+      font-size: 12px;
+      text-align: center; 
+      font-weight: bold;
+      margin-top: 20px;
+      margin-right: 20px;
+        
+    }
+    .desc-title{
+
+        display: none;
+    } 
+
+    .desc-container{
+       flex-direction: column-reverse;
+    }
+    .desc-img{
+       width: 100% !important;
+
+    }
+
+
+
+}
