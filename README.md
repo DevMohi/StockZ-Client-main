@@ -6,13 +6,10 @@ Open [https://warehouse-project-f3584.web.app/](https://warehouse-project-f3584.
 
 - Responsive for both dekstop and mobile
 
-<!-- * Item 1
-* Item 2
-* Item 3
-  * Sub Item A
-  * Sub Item B -->
-
 # Project Description
+- This is a warehouse website based on bike stocks, the user can login, update,delete, create stocks. This is a full stack project, and here you can find all the latest bikes
+
+# Project Features
 
 - The Website has login and logout , also the user can login with google authentication , this has been done through firebase.
 - You can Update and Manage Inventories
