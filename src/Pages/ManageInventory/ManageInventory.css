@@ -1,0 +1,11 @@
+@media only screen and (max-width: 678px) {
+    .table-container{
+        display: flex;
+        justify-content: center;
+        
+    }
+    .table-container th,td,tr{
+        font-size: 12px;
+    }
+
+}

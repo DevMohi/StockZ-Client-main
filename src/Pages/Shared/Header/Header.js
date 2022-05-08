@@ -33,6 +33,9 @@ const Header = () => {
                             <Nav.Link as={Link} to='/manage' className='text-white'>
                                 Manage Items
                             </Nav.Link>
+                            <Nav.Link as={Link} to='/myitems' className='text-white'>
+                                My Items
+                            </Nav.Link>
                         </>}
                     </Nav>
                     <Form className="d-flex">

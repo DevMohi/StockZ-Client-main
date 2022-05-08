@@ -3,7 +3,6 @@ import './Review.css'
 
 const Review = ({ review }) => {
     const { img, name, rating, desc } = review;
-    console.log(review)
     return (
         <div className='g-5 col-sm-12 col-md-6 col-lg-4 '>
             <div className='shadow-sm p-3 mb-5 bg-body rounded'>

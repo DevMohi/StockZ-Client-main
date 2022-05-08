@@ -1,0 +1,17 @@
+.add-container input {
+    padding: 5px;
+    
+}
+
+.custom-btn{
+    background-color: #72adf1;
+    width: 25%;
+    margin: 0 auto;
+    color: white;
+}
+
+@media only screen and (max-width: 678px) {
+    .custom-btn{
+        width: 100%;
+    }
+}
