@@ -9,7 +9,7 @@ const InventoryDetails = ({ details }) => {
     }
     let sold;
     if (parseInt(quantity) === 0) {
-        sold = <p>Sold Out</p>
+        sold = <p className='text-danger'>Sold Out</p>
     }
     return (
 

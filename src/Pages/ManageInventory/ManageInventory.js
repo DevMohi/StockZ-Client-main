@@ -28,7 +28,7 @@ const ManageInventory = () => {
                 })
         }
     }
-    let sold;
+
 
     return (
         <div className='container table-container'>
@@ -52,7 +52,7 @@ const ManageInventory = () => {
                                 <tr>
                                     <td className='w-25 text-center'><img style={{ width: '50px' }} src={details.img} alt="" /></td>
                                     <td className='w-25 text-center'>{details.name}</td>
-                                    <td className='w-25 text-center'>{details.quantity}</td>
+                                    <td className='w-25 text-center'>{parseInt(details.quantity) === 0 ? <p className='text-danger'>Sold Out</p> : details.quantity}</td>
                                     <td className='w-25 text-center'>{details.price}
                                         <button className=' btn btn-dark delete-btn ms-2' onClick={() => handleDelete(details._id)}>❌</button>
                                     </td>

@@ -21,7 +21,7 @@ const UpdateDetails = () => {
 
     let sold;
     if (parseInt(inventory.quantity) === 0) {
-        sold = <p className=''>Sold Out</p>
+        sold = <p className='text-danger'>Sold Out</p>
     }
 
     const updateBtn = () => {
