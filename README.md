@@ -1,5 +1,7 @@
 # Project Name
+
 StockZ
+
 ## Project Link
 
 Open [https://warehouse-project-f3584.web.app/](https://warehouse-project-f3584.web.app/) to view the live site in your browser.
@@ -7,6 +9,7 @@ Open [https://warehouse-project-f3584.web.app/](https://warehouse-project-f3584.
 - Responsive for both dekstop and mobile
 
 # Project Description
+
 - This is a warehouse website based on bike stocks, the user can login, update,delete, create stocks. This is a full stack project, and here you can find all the latest bikes
 
 # Project Features
@@ -21,6 +24,7 @@ Open [https://warehouse-project-f3584.web.app/](https://warehouse-project-f3584.
 - Data has been fetched directly from database, so basically its real time.
 
 # Frameworks and Technologies Used
+
 - MongoDB
 - React Firebase Hooks
 - Google Firebase
